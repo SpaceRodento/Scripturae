@@ -1,0 +1,71 @@
+/*
+ * Configuration Template
+ *
+ * Copy this file to config.h and customize for your project
+ *
+ * cp config.h.example config.h
+ */
+
+#ifndef CONFIG_H
+#define CONFIG_H
+
+// ==================== WiFi Configuration ====================
+#define WIFI_SSID "ESP32-Config"           // WiFi AP name
+#define WIFI_PASSWORD "esp32pass"          // WiFi password (min 8 chars, or "" for open)
+#define WIFI_CHANNEL 1                     // WiFi channel (1-13)
+#define MAX_CONNECTIONS 4                  // Max simultaneous connections
+
+// ==================== Network Configuration ====================
+#define AP_IP_ADDR 192, 168, 4, 1          // Access Point IP
+#define AP_GATEWAY 192, 168, 4, 1          // Gateway IP
+#define AP_SUBNET 255, 255, 255, 0         // Subnet mask
+
+// ==================== Hardware Pin Configuration ====================
+// Modify these based on your wiring
+
+// Outputs
+#define LED_PIN 2                          // Built-in LED (usually GPIO 2)
+#define RELAY_PIN 4                        // Relay/Output control pin
+#define SERVO_PIN 5                        // Servo motor pin (if used)
+
+// Inputs
+#define SENSOR_PIN 34                      // Analog sensor (ADC1 pins: 32-39)
+#define BUTTON_PIN 0                       // Button input (often GPIO 0)
+#define DIGITAL_IN_PIN 35                  // Digital input
+
+// Communication (I2C, SPI, etc.)
+#define I2C_SDA 21                         // I2C data pin
+#define I2C_SCL 22                         // I2C clock pin
+#define SPI_MOSI 23                        // SPI MOSI
+#define SPI_MISO 19                        // SPI MISO
+#define SPI_SCK 18                         // SPI clock
+#define SPI_CS 5                           // SPI chip select
+
+// ==================== Application Configuration ====================
+#define PROJECT_NAME "ESP32 Dashboard"     // Shown in web interface
+#define SENSOR_READ_INTERVAL 500           // Sensor reading interval (ms)
+#define AUTO_REFRESH_INTERVAL 2000         // Web page auto-refresh (ms)
+
+// Operating modes
+#define MODE_AUTO "auto"
+#define MODE_MANUAL "manual"
+#define MODE_SLEEP "sleep"
+
+// ==================== Safety & Limits ====================
+#define MAX_SENSOR_VALUE 4095              // Maximum ADC value
+#define MIN_SENSOR_VALUE 0                 // Minimum ADC value
+#define SENSOR_THRESHOLD 2000              // Threshold for auto mode
+#define RELAY_MAX_ON_TIME 60000            // Max relay on time (ms) - safety
+
+// ==================== Debug Configuration ====================
+#define SERIAL_BAUD_RATE 115200            // Serial monitor baud rate
+#define ENABLE_DEBUG true                  // Enable debug messages
+#define ENABLE_VERBOSE false               // Extra verbose logging
+
+// ==================== Security ====================
+// WARNING: This is basic security. For production, use proper authentication!
+#define ENABLE_AUTH false                  // Enable basic authentication
+#define AUTH_USERNAME "admin"              // Username for web interface
+#define AUTH_PASSWORD "admin123"           // Password for web interface
+
+#endif // CONFIG_H
